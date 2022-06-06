@@ -12,10 +12,10 @@ import java.util.*
 class UsersController(@Autowired val userService: UserService) {
 
     @GetMapping("/getuser")
-    fun getUser(@RequestParam("id") id: Long): Optional<User> = userService.getUserById(id)
+    fun getUser(@RequestParam("id") id: Long) = userService.getUserById(id)
 
     @GetMapping("/getusers")
-    fun getAllUser(): List<User> = userService.getAllUser()
+    fun getAllUser() = userService.getAllUser()
 
     @PostMapping("/insert")
     fun newUser(
